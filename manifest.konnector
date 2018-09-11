@@ -1,0 +1,61 @@
+{
+  "categories": [],
+  "data_types": [],
+  "editor": "Cozy",
+  "fields": {
+    "login": {
+      "type": "text"
+    },
+    "password": {
+      "type": "password"
+    },
+    "date": {
+      "type": "date",
+      "required": false
+    },
+    "timeout": {
+      "type": "text",
+      "default": "1000"
+    }
+  },
+  "icon": "cozy.svg",
+  "langs": ["en","fr"],
+  "locales": {
+    "en": {
+      "description": "Konnector used for debug purpose",
+      "fields": {
+        "date": {
+          "label": "Date"
+        }
+      }
+    },
+    "fr": {
+      "description": "Konnecteur de débogage",
+      "fields": {
+        "date": {
+          "label": "Date"
+        }
+      }
+    }
+  },
+  "manifest_version": "2",
+  "version": "1.1.0",
+  "name": "Debug",
+  "category": "other",
+  "type": "node",
+  "slug": "debug",
+  "description": "debug connector",
+  "source": "git://github.com/cozy/cozy-konnector-debug.git",
+  "permissions": {
+    "accounts": {
+      "description": "Required to get the account's data",
+      "type": "io.cozy.accounts",
+      "verbs": ["GET"]
+    }
+  },
+  "developer": {
+    "name": "cozy",
+    "url": "cozy.io"
+  },
+  "vendor_link": "http://cozy.io"
+}
