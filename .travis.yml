@@ -16,6 +16,7 @@ branches:
   except:
   - build
   - build-debug
+  - aggregator
 script:
 - yarn lint
 - yarn build

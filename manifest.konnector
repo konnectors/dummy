@@ -1,5 +1,5 @@
 {
-  "categories": [],
+  "categories": ["other"],
   "data_types": [],
   "editor": "Cozy",
   "fields": {
@@ -24,7 +24,7 @@
       }
     }
   },
-  "icon": "cozy.svg",
+  "icon": "dummy.svg",
   "langs": ["en","fr"],
   "locales": {
     "en": {
@@ -45,13 +45,13 @@
     }
   },
   "manifest_version": "2",
-  "version": "1.1.0",
-  "name": "Debug",
+  "version": "1.0.0",
+  "name": "Dummy",
   "category": "other",
   "type": "konnector",
-  "slug": "debug",
-  "description": "debug connector",
-  "source": "git://github.com/cozy/cozy-konnector-debug.git",
+  "slug": "dummy",
+  "description": "Konnector used for debugging purpose",
+  "source": "git://github.com/konnectors/dummy.git",
   "permissions": {
     "accounts": {
       "description": "Required to get the account's data",
