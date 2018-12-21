@@ -1,4 +1,4 @@
-[Cozy][cozy] Debug
+[Cozy][cozy] Dummy
 =======================================
 
 What's Cozy?
@@ -8,10 +8,10 @@ What's Cozy?
 
 [Cozy] is a platform that brings all your web services in the same private space. With it, your webapps and your devices can share data easily, providing you with a new experience. You can install Cozy on your own hardware where no one's tracking you.
 
-What's Debug?
+What's Dummy?
 --------------------------
 
-Debug is a konnector used for development, debugging and test purpose.
+Dummy is a konnector used for development, debugging and test purpose.
 
 ### Open a Pull-Request
 
