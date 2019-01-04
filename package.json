@@ -30,7 +30,7 @@
     "postbuild": "scripts/postbuild.sh",
     "precommit": "yarn lint",
     "lint": "eslint --fix .",
-    "deploy": "scripts/deploy.sh $GITHUB_TOKEN",
+    "deploy": "scripts/deploy.sh $DEPLOY_REPOSITORY",
     "cozyPublish": "scripts/publish.sh $REGISTRY_TOKEN",
     "travisDeployKey": "./bin/generate_travis_deploy_key"
   },
