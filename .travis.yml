@@ -14,8 +14,8 @@ cache:
 branches:
   except:
   - build
-  - build-dummy
-  - aggregator
+  - build_aggregator
+  - build_oauth
 script:
 - yarn lint
 - yarn build

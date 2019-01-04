@@ -2,10 +2,11 @@
 set -e
 
 # Generate all flavous of Dummy
-
-# Dummy Aggregator
-rm -Rf build-aggregator
-cp -R build build-aggregator
-jq -s '.[0] * .[1]' build-aggregator/manifest.konnector flavours/aggregator/manifest.fragment.json > build-aggregator/manifest.temp
-rm build-aggregator/manifest.konnector
-mv build-aggregator/manifest.temp build-aggregator/manifest.konnector
+shopt -s dotglob
+find flavours/* -prune -type d -exec basename {} \; | while IFS= read -r d; do
+    rm -Rf "build-$d"
+    cp -R build "build-$d"
+    jq -s '.[0] * .[1]' "build-$d/manifest.konnector" "flavours/$d/manifest.fragment.json" > "build-$d/manifest.temp"
+    rm "build-$d/manifest.konnector"
+    mv "build-$d/manifest.temp" "build-$d/manifest.konnector"
+done
