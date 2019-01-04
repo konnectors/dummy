@@ -12,7 +12,7 @@ yarn-error.log
 
 # Build
 build/
-build-aggregator/
+build-*/
 
 # OS generated files
 .DS_Store
