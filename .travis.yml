@@ -24,7 +24,7 @@ script:
 deploy:
 - provider: script
   skip-cleanup: true
-  script: DEPLOY_BRANCH=build yarn deploy && yarn cozyPublish
+  script: yarn deploy && yarn cozyPublish
   on:
     branch: master
 before_install:
