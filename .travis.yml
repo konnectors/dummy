@@ -6,8 +6,7 @@ env:
   - GH_USER_EMAIL="travis@example.org"
   - GH_USER_NAME="cozy-bot"
   - DEPLOY_REPOSITORY="git@github.com:konnectors/dummy.git"
-  # REGISTRY_TOKEN
-  - secure: "UaZUQhjcp5D5g76CUynv71YK0zp+5W4sCnITqTWOntYQv3SijIA4+QvVw7K7zkv5rLerFTGgyCBlbMtgTaE9zS1HX8CImwR8DXh6LamcNS9H1MJG7xeg1jeI1SajBjOT5AKcS3H1XK9rJ673mDLlur/MU7XdPKK4h6s/g/ZJ5VC5GaaxMJMsBan6CCdNAZuPmTrq6avnKY1rooVTpahxQIkNuW3znMEdLXHbkphZ+JPD0AjB2pnRf1clsxuguFOFUQafSChg2HorFVYogqRqWYEhTAS7o0qwY3qJNRdWC2jvGEyAJXFKQTYt7t54/l4tBgvoTrKVrP5rhnMEYQB7LwqitRYHIE4Kqoy8XBdgost48y+Lmz4MTRNgvQDMgHEUEVKxHZcYHGhRGPGcHdZEsqdtO1Yu7z0HV3JVnTJaAVhuKP3NtnG7qDu/CQMCDb5Tq0XHE5oaxbBaYDg7Zj4Gpm6p4dWqhX5/AX15XRiQEtvmsBXRFPjXcC/TOkgA9e91uhzUEIkCHxO4mZ158REhhAe3JTCLJ89pyvNhAU0knlXvfC5zoRj5/GN72gdHup6so0UuG553kcK2/SgsJoapwHliKhIJWMlZrmwKr4REnbm1mRsF6nLvuLX842p/ebP9ZgAEh6eTce88CDNztTtMtHzYMCZl2Ui8c7Xk6IPiOF4="
+  - secure: UaZUQhjcp5D5g76CUynv71YK0zp+5W4sCnITqTWOntYQv3SijIA4+QvVw7K7zkv5rLerFTGgyCBlbMtgTaE9zS1HX8CImwR8DXh6LamcNS9H1MJG7xeg1jeI1SajBjOT5AKcS3H1XK9rJ673mDLlur/MU7XdPKK4h6s/g/ZJ5VC5GaaxMJMsBan6CCdNAZuPmTrq6avnKY1rooVTpahxQIkNuW3znMEdLXHbkphZ+JPD0AjB2pnRf1clsxuguFOFUQafSChg2HorFVYogqRqWYEhTAS7o0qwY3qJNRdWC2jvGEyAJXFKQTYt7t54/l4tBgvoTrKVrP5rhnMEYQB7LwqitRYHIE4Kqoy8XBdgost48y+Lmz4MTRNgvQDMgHEUEVKxHZcYHGhRGPGcHdZEsqdtO1Yu7z0HV3JVnTJaAVhuKP3NtnG7qDu/CQMCDb5Tq0XHE5oaxbBaYDg7Zj4Gpm6p4dWqhX5/AX15XRiQEtvmsBXRFPjXcC/TOkgA9e91uhzUEIkCHxO4mZ158REhhAe3JTCLJ89pyvNhAU0knlXvfC5zoRj5/GN72gdHup6so0UuG553kcK2/SgsJoapwHliKhIJWMlZrmwKr4REnbm1mRsF6nLvuLX842p/ebP9ZgAEh6eTce88CDNztTtMtHzYMCZl2Ui8c7Xk6IPiOF4=
 cache:
   yarn: true
   directories:
@@ -34,7 +33,7 @@ deploy:
   on:
     tags: true
 before_install:
-- openssl aes-256-cbc -K $encrypted_ca10f658ab58_key -iv $encrypted_ca10f658ab58_iv
+- openssl aes-256-cbc -K $encrypted_cd8561ccbc5f_key -iv $encrypted_cd8561ccbc5f_iv
   -in github_deploy_key.enc -out /tmp/github_deploy_key -d
 - eval "$(ssh-agent -s)"
 - chmod 600 /tmp/github_deploy_key
