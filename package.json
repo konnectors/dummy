@@ -29,7 +29,7 @@
     "build": "webpack",
     "postbuild": "scripts/postbuild.sh",
     "lint": "eslint --fix .",
-    "deploy": "scripts/deploy.sh $DEPLOY_REPOSITORY",
+    "deploy": "scripts/deploy.sh",
     "cozyPublish": "scripts/publish.sh $REGISTRY_TOKEN",
     "travisDeployKey": "./bin/generate_travis_deploy_key"
   },
