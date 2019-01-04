@@ -2,7 +2,6 @@
 set -e
 
 # Generate all flavous of Dummy
-shopt -s dotglob
 find flavours/* -prune -type d -exec basename {} \; | while IFS= read -r d; do
     rm -Rf "build-$d"
     cp -R build "build-$d"
