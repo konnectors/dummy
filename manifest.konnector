@@ -4,28 +4,7 @@
   ],
   "data_types": [],
   "editor": "Cozy",
-  "fields": {
-    "login": {
-      "type": "text"
-    },
-    "password": {
-      "type": "password"
-    },
-    "date": {
-      "type": "date",
-      "required": false
-    },
-    "timeout": {
-      "type": "text",
-      "default": "1000"
-    },
-    "advancedFields": {
-      "folderPath": {
-        "advanced": true,
-        "isRequired": false
-      }
-    }
-  },
+  "fields": null,
   "icon": "dummy.svg",
   "langs": [
     "en",
