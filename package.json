@@ -28,7 +28,6 @@
     "clean": "rm -rf ./data",
     "build": "webpack",
     "postbuild": "scripts/postbuild.sh",
-    "precommit": "yarn lint",
     "lint": "eslint --fix .",
     "deploy": "scripts/deploy.sh $DEPLOY_REPOSITORY",
     "cozyPublish": "scripts/publish.sh $REGISTRY_TOKEN",
