@@ -1,0 +1,9 @@
+{
+  "name": "Dummy OAuth",
+  "slug": "dummy-oauth",
+  "fields": {},
+  "oauth": {
+    "account_type": "dummy-oauth",
+    "scope": "debug"
+  }
+}
