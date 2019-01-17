@@ -14,24 +14,17 @@ cache:
 branches:
   except:
   - build
-  - build-dummy
-  - aggregator
+  - build_aggregator
+  - build_oauth
 script:
 - yarn lint
 - yarn build
-# Comment until a new version of konitor is released
-# - yarn run check
 deploy:
 - provider: script
   skip-cleanup: true
-  script: DEPLOY_BRANCH=build yarn deploy && yarn cozyPublish
+  script: yarn deploy && yarn cozyPublish
   on:
     branch: master
-- provider: script
-  skip-cleanup: true
-  script: DEPLOY_BRANCH=build yarn deploy && yarn cozyPublish
-  on:
-    tags: true
 before_install:
 - openssl aes-256-cbc -K $encrypted_cd8561ccbc5f_key -iv $encrypted_cd8561ccbc5f_iv
   -in github_deploy_key.enc -out /tmp/github_deploy_key -d
