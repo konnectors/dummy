@@ -1,0 +1,77 @@
+{
+  "categories": [
+    "other"
+  ],
+  "data_types": [],
+  "editor": "Cozy",
+  "fields": {
+    "login": {
+      "type": "text"
+    },
+    "password": {
+      "type": "password"
+    },
+    "date": {
+      "type": "date",
+      "required": false
+    },
+    "timeout": {
+      "type": "text",
+      "default": "1000"
+    },
+    "advancedFields": {
+      "folderPath": {
+        "advanced": true,
+        "isRequired": false
+      }
+    }
+  },
+  "icon": "dummy.svg",
+  "langs": [
+    "en",
+    "fr"
+  ],
+  "locales": {
+    "en": {
+      "description": "Konnector used for debug purpose",
+      "fields": {
+        "date": {
+          "label": "Date"
+        }
+      }
+    },
+    "fr": {
+      "description": "Konnecteur de débogage",
+      "fields": {
+        "date": {
+          "label": "Date"
+        }
+      }
+    }
+  },
+  "manifest_version": "2",
+  "version": "1.0.0",
+  "name": "Dummy Aggregator",
+  "category": "other",
+  "type": "konnector",
+  "slug": "dummy-aggregator",
+  "description": "Konnector used for debugging purpose",
+  "source": "git://github.com/konnectors/dummy.git",
+  "permissions": {
+    "accounts": {
+      "description": "Required to get the account's data",
+      "type": "io.cozy.accounts",
+      "verbs": [
+        "GET"
+      ]
+    }
+  },
+  "developer": {
+    "name": "cozy",
+    "url": "cozy.io"
+  },
+  "vendor_link": "http://cozy.io",
+  "aggregator": {
+    "accountId": "dummy-aggregator"
+  }
+}
