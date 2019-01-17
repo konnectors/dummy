@@ -19,8 +19,6 @@ branches:
 script:
 - yarn lint
 - yarn build
-# Comment until a new version of konitor is released
-# - yarn run check
 deploy:
 - provider: script
   skip-cleanup: true
