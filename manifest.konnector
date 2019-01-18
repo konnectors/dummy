@@ -11,10 +11,6 @@
     "password": {
       "type": "password"
     },
-    "date": {
-      "type": "date",
-      "required": false
-    },
     "timeout": {
       "type": "text",
       "default": "1000"
