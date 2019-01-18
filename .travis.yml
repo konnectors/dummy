@@ -15,6 +15,7 @@ branches:
   except:
   - build
   - build_aggregator
+  - build_form
   - build_oauth
 script:
 - yarn lint
