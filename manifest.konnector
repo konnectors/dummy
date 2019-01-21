@@ -5,22 +5,6 @@
   "data_types": [],
   "editor": "Cozy",
   "fields": {
-    "login": {
-      "type": "text"
-    },
-    "password": {
-      "type": "password"
-    },
-    "timeout": {
-      "type": "text",
-      "default": "1000"
-    },
-    "advancedFields": {
-      "folderPath": {
-        "advanced": true,
-        "isRequired": false
-      }
-    },
     "username": {
       "type": "text"
     },
