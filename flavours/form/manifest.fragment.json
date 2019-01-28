@@ -13,6 +13,10 @@
       "type": "date",
       "required": false
     },
+    "email": {
+      "required": false,
+      "type": "email"
+    },
     "choice": {
       "type": "dropdown",
       "required": false,
@@ -34,6 +38,22 @@
           "value": "4"
         }
       ]
+    }
+  },
+  "locales": {
+    "en": {
+      "fields": {
+        "email": {
+          "placeholder": "your@email (custom placeholder)"
+        }
+      }
+    },
+    "fr": {
+      "fields": {
+        "email": {
+          "placeholder": "votre@email (placeholder personnalisé)"
+        }
+      }
     }
   }
 }
