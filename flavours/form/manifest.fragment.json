@@ -3,7 +3,8 @@
   "slug": "dummy-form",
   "fields": {
     "username": {
-      "type": "text"
+      "type": "text",
+      "label": "login"
     },
     "passphrase": {
       "type": "password"
