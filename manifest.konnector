@@ -6,7 +6,8 @@
   "editor": "Cozy",
   "fields": {
     "username": {
-      "type": "text"
+      "type": "text",
+      "label": "login"
     },
     "passphrase": {
       "type": "password"
@@ -14,6 +15,10 @@
     "date": {
       "type": "date",
       "required": false
+    },
+    "email": {
+      "required": false,
+      "type": "email"
     },
     "choice": {
       "type": "dropdown",
@@ -45,18 +50,16 @@
   ],
   "locales": {
     "en": {
-      "description": "Konnector used for debug purpose",
       "fields": {
-        "date": {
-          "label": "Date"
+        "email": {
+          "placeholder": "your@email (custom placeholder)"
         }
       }
     },
     "fr": {
-      "description": "Konnecteur de débogage",
       "fields": {
-        "date": {
-          "label": "Date"
+        "email": {
+          "placeholder": "votre@email (placeholder personnalisé)"
         }
       }
     }
