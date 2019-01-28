@@ -3,7 +3,8 @@
   "slug": "dummy-form",
   "fields": {
     "username": {
-      "type": "text"
+      "type": "text",
+      "label": "login"
     },
     "passphrase": {
       "type": "password"
@@ -11,6 +12,10 @@
     "date": {
       "type": "date",
       "required": false
+    },
+    "email": {
+      "required": false,
+      "type": "email"
     },
     "choice": {
       "type": "dropdown",
@@ -33,6 +38,22 @@
           "value": "4"
         }
       ]
+    }
+  },
+  "locales": {
+    "en": {
+      "fields": {
+        "email": {
+          "placeholder": "your@email (custom placeholder)"
+        }
+      }
+    },
+    "fr": {
+      "fields": {
+        "email": {
+          "placeholder": "votre@email (placeholder personnalisé)"
+        }
+      }
     }
   }
 }
