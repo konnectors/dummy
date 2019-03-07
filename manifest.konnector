@@ -47,7 +47,7 @@
   },
   "manifest_version": "2",
   "version": "1.0.0",
-  "name": "Dummy Aggregator",
+  "name": "Aggregator (Dummy)",
   "category": "other",
   "type": "konnector",
   "slug": "dummy-aggregator",
