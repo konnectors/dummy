@@ -24,10 +24,10 @@ async function start(fields) {
     return new Promise(resolve => {
       setTimeout(() => {
         if (
-          !!fields.login &&
-          konnectorErrors.includes(fields.login.toUpperCase())
+          !!fields.error &&
+          konnectorErrors.includes(fields.error.toUpperCase())
         ) {
-          throw new Error(fields.login.toUpperCase())
+          throw new Error(fields.error.toUpperCase())
         }
         resolve()
       }, timeout)
