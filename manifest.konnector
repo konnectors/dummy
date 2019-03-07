@@ -16,6 +16,9 @@
       "fields": {
         "date": {
           "label": "Date"
+        },
+        "error": {
+          "label": "Intended error"
         }
       }
     },
@@ -24,6 +27,9 @@
       "fields": {
         "date": {
           "label": "Date"
+        },
+        "error": {
+          "label": "Erreur souhaitée"
         }
       }
     }
