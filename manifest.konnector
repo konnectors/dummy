@@ -15,6 +15,72 @@
       "type": "text",
       "default": "1000"
     },
+    "error": {
+      "type": "dropdown",
+      "required": false,
+      "options": [
+        {
+          "label": "CHALLENGE_ASKED",
+          "value": "CHALLENGE_ASKED"
+        },
+        {
+          "label": "LOGIN_FAILED",
+          "value": "LOGIN_FAILED"
+        },
+        {
+          "label": "LOGIN_FAILED.NEEDS_SECRET",
+          "value": "LOGIN_FAILED.NEEDS_SECRET"
+        },
+        {
+          "label": "LOGIN_FAILED.TOO_MANY_ATTEMPTS",
+          "value": "LOGIN_FAILED.TOO_MANY_ATTEMPTS"
+        },
+        {
+          "label": "MAINTENANCE",
+          "value": "MAINTENANCE"
+        },
+        {
+          "label": "NOT_EXISTING_DIRECTORY",
+          "value": "NOT_EXISTING_DIRECTORY"
+        },
+        {
+          "label": "TERMS_VERSION_MISMATCH",
+          "value": "TERMS_VERSION_MISMATCH"
+        },
+        {
+          "label": "USER_ACTION_NEEDED",
+          "value": "USER_ACTION_NEEDED"
+        },
+        {
+          "label": "USER_ACTION_NEEDED.ACCOUNT_REMOVED",
+          "value": "USER_ACTION_NEEDED.ACCOUNT_REMOVED"
+        },
+        {
+          "label": "USER_ACTION_NEEDED.CHANGE_PASSWORD",
+          "value": "USER_ACTION_NEEDED.CHANGE_PASSWORD"
+        },
+        {
+          "label": "USER_ACTION_NEEDED.OAUTH_OUTDATED",
+          "value": "USER_ACTION_NEEDED.OAUTH_OUTDATED"
+        },
+        {
+          "label": "USER_ACTION_NEEDED.PERMISSIONS_CHANGED",
+          "value": "USER_ACTION_NEEDED.PERMISSIONS_CHANGED"
+        },
+        {
+          "label": "VENDOR_DOWN",
+          "value": "VENDOR_DOWN"
+        },
+        {
+          "label": "VENDOR_DOWN.BANK_DOWN",
+          "value": "VENDOR_DOWN.BANK_DOWN"
+        },
+        {
+          "label": "VENDOR_DOWN.LINXO_DOWN",
+          "value": "VENDOR_DOWN.LINXO_DOWN"
+        }
+      ]
+    },
     "advancedFields": {
       "folderPath": {
         "advanced": true,
