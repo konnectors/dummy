@@ -2,6 +2,6 @@
   "aggregator": {
     "accountId": "dummy-aggregator"
   },
-  "name": "Dummy Aggregator",
+  "name": "Aggregator (Dummy)",
   "slug": "dummy-aggregator"
 }
