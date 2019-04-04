@@ -2,5 +2,104 @@
   "name": "Bank (Dummy)",
   "slug": "dummy-bank",
   "category": "banking",
-  "data_types": ["bankAccounts"]
+  "data_types": ["bankAccounts"],
+  "fields": {
+    "login": {
+      "type": "text"
+    },
+    "password": {
+      "type": "password"
+    },
+    "timeout": {
+      "type": "text",
+      "default": "1000"
+    },
+    "error": {
+      "type": "dropdown",
+      "isRequired": false,
+      "required": false,
+      "options": [
+        {
+          "label": "-",
+          "name": "-",
+          "value": ""
+        },
+        {
+          "label": "CHALLENGE_ASKED",
+          "name": "CHALLENGE_ASKED",
+          "value": "CHALLENGE_ASKED"
+        },
+        {
+          "label": "LOGIN_FAILED",
+          "name": "LOGIN_FAILED",
+          "value": "LOGIN_FAILED"
+        },
+        {
+          "label": "LOGIN_FAILED.NEEDS_SECRET",
+          "name": "LOGIN_FAILED.NEEDS_SECRET",
+          "value": "LOGIN_FAILED.NEEDS_SECRET"
+        },
+        {
+          "label": "LOGIN_FAILED.TOO_MANY_ATTEMPTS",
+          "name": "LOGIN_FAILED.TOO_MANY_ATTEMPTS",
+          "value": "LOGIN_FAILED.TOO_MANY_ATTEMPTS"
+        },
+        {
+          "label": "MAINTENANCE",
+          "name": "MAINTENANCE",
+          "value": "MAINTENANCE"
+        },
+        {
+          "label": "NOT_EXISTING_DIRECTORY",
+          "name": "NOT_EXISTING_DIRECTORY",
+          "value": "NOT_EXISTING_DIRECTORY"
+        },
+        {
+          "label": "TERMS_VERSION_MISMATCH",
+          "name": "TERMS_VERSION_MISMATCH",
+          "value": "TERMS_VERSION_MISMATCH"
+        },
+        {
+          "label": "USER_ACTION_NEEDED",
+          "name": "USER_ACTION_NEEDED",
+          "value": "USER_ACTION_NEEDED"
+        },
+        {
+          "label": "USER_ACTION_NEEDED.ACCOUNT_REMOVED",
+          "name": "USER_ACTION_NEEDED.ACCOUNT_REMOVED",
+          "value": "USER_ACTION_NEEDED.ACCOUNT_REMOVED"
+        },
+        {
+          "label": "USER_ACTION_NEEDED.CHANGE_PASSWORD",
+          "name": "USER_ACTION_NEEDED.CHANGE_PASSWORD",
+          "value": "USER_ACTION_NEEDED.CHANGE_PASSWORD"
+        },
+        {
+          "label": "USER_ACTION_NEEDED.OAUTH_OUTDATED",
+          "name": "USER_ACTION_NEEDED.OAUTH_OUTDATED",
+          "value": "USER_ACTION_NEEDED.OAUTH_OUTDATED"
+        },
+        {
+          "label": "USER_ACTION_NEEDED.PERMISSIONS_CHANGED",
+          "name": "USER_ACTION_NEEDED.PERMISSIONS_CHANGED",
+          "value": "USER_ACTION_NEEDED.PERMISSIONS_CHANGED"
+        },
+        {
+          "label": "VENDOR_DOWN",
+          "name": "VENDOR_DOWN",
+          "value": "VENDOR_DOWN"
+        },
+        {
+          "label": "VENDOR_DOWN.BANK_DOWN",
+          "name": "VENDOR_DOWN.BANK_DOWN",
+          "value": "VENDOR_DOWN.BANK_DOWN"
+        },
+        {
+          "label": "VENDOR_DOWN.LINXO_DOWN",
+          "name": "VENDOR_DOWN.LINXO_DOWN",
+          "value": "VENDOR_DOWN.LINXO_DOWN"
+        }
+      ]
+    }
+  }
 }
