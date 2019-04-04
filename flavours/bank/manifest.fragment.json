@@ -1,0 +1,6 @@
+{
+  "name": "Bank (Dummy)",
+  "slug": "dummy-bank",
+  "category": "banking",
+  "data_types": ["bankAccounts"]
+}
