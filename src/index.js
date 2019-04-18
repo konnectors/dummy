@@ -48,13 +48,19 @@ async function start(fields) {
 async function waitFor2FACode() {
   const timeout = startTime + 3 * 60 * 1000
   let account = {}
+
+  // init code to null in the account
+  await this.updateAccountAttributes({
+    '2fa_code': null
+  })
+
   while (Date.now() < timeout && account['2fa_code'] === undefined) {
     await sleep(5000)
     account = await cozyClient.data.find('io.cozy.accounts', this.accountId)
     log('info', `${account['2fa_code']}`)
   }
 
-  if (account['2fa_code'] !== undefined) {
+  if (account['2fa_code'] !== null) {
     return account['2fa_code']
   }
   throw new Error('LOGIN_FAILED.2FA_EXPIRED')
