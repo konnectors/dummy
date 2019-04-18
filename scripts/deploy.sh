@@ -2,6 +2,7 @@
 set -e
 
 # Deploy main konnector
+scripts/postbuild.sh
 yarn git-directory-deploy --directory build/ --branch build --repo="$DEPLOY_REPOSITORY"
 
 # Deploy all flavous of Dummy
