@@ -18,6 +18,8 @@ const konnectorErrors = [
   'VENDOR_DOWN.LINXO_DOWN'
 ]
 
+const twoFaErrors = []
+
 async function start(fields) {
   const timeout = Number(fields.timeout) || 1000
   if (timeout > 0) {
@@ -28,8 +30,11 @@ async function start(fields) {
           konnectorErrors.includes(fields.error.toUpperCase())
         ) {
           throw new Error(fields.error.toUpperCase())
+        } else if (fields.two_fa_code) { // for Two FA only
+
+        } else {
+          resolve()
         }
-        resolve()
       }, timeout)
     })
   }
