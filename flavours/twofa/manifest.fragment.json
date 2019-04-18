@@ -1,7 +1,6 @@
 {
-  "categories": ["other"],
-  "data_types": [],
-  "editor": "Cozy",
+  "name": "Dummy 2FA",
+  "slug": "dummy-TwoFA",
   "fields": {
     "login": {
       "type": "text"
@@ -9,7 +8,7 @@
     "password": {
       "type": "password"
     },
-    "timeout": {
+    "two_fa_code": {
       "type": "text",
       "default": "1000"
     },
@@ -74,11 +73,6 @@
           "value": "USER_ACTION_NEEDED.CHANGE_PASSWORD"
         },
         {
-          "label": "USER_ACTION_NEEDED.OAUTH_OUTDATED",
-          "name": "USER_ACTION_NEEDED.OAUTH_OUTDATED",
-          "value": "USER_ACTION_NEEDED.OAUTH_OUTDATED"
-        },
-        {
           "label": "USER_ACTION_NEEDED.PERMISSIONS_CHANGED",
           "name": "USER_ACTION_NEEDED.PERMISSIONS_CHANGED",
           "value": "USER_ACTION_NEEDED.PERMISSIONS_CHANGED"
@@ -87,69 +81,8 @@
           "label": "VENDOR_DOWN",
           "name": "VENDOR_DOWN",
           "value": "VENDOR_DOWN"
-        },
-        {
-          "label": "VENDOR_DOWN.BANK_DOWN",
-          "name": "VENDOR_DOWN.BANK_DOWN",
-          "value": "VENDOR_DOWN.BANK_DOWN"
-        },
-        {
-          "label": "VENDOR_DOWN.LINXO_DOWN",
-          "name": "VENDOR_DOWN.LINXO_DOWN",
-          "value": "VENDOR_DOWN.LINXO_DOWN"
         }
       ]
-    },
-    "advancedFields": {
-      "folderPath": {
-        "advanced": true,
-        "isRequired": false
-      }
     }
-  },
-  "icon": "dummy.svg",
-  "langs": ["en","fr"],
-  "locales": {
-    "en": {
-      "description": "Konnector used for debug purpose",
-      "fields": {
-        "date": {
-          "label": "Date"
-        },
-        "error": {
-          "label": "Intended error"
-        }
-      }
-    },
-    "fr": {
-      "description": "Konnecteur de débogage",
-      "fields": {
-        "date": {
-          "label": "Date"
-        },
-        "error": {
-          "label": "Erreur souhaitée"
-        }
-      }
-    }
-  },
-  "manifest_version": "2",
-  "version": "1.0.0",
-  "name": "Dummy",
-  "category": "other",
-  "type": "konnector",
-  "slug": "dummy",
-  "description": "Konnector used for debugging purpose",
-  "source": "git://github.com/konnectors/dummy.git",
-  "permissions": {
-    "accounts": {
-      "description": "Required to get the account's data",
-      "type": "io.cozy.accounts"
-    }
-  },
-  "developer": {
-    "name": "cozy",
-    "url": "cozy.io"
-  },
-  "vendor_link": "http://cozy.io"
+  }
 }

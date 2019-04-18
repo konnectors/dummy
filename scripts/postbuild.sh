@@ -1,7 +1,7 @@
 #! /bin/sh
 set -e
 
-# Generate all flavous of Dummy
+# Generate all flavours of Dummy
 find flavours/* -prune -type d -exec basename {} \; | while IFS= read -r d; do
     rm -Rf "build-$d"
     cp -R build "build-$d"
