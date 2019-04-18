@@ -10,7 +10,7 @@
     },
     "two_fa_code": {
       "type": "text",
-      "default": "1000"
+      "default": "Cozy2FA"
     },
     "error": {
       "type": "dropdown",
