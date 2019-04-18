@@ -31,11 +31,11 @@ async function start(fields) {
     ) {
       throw new Error(fields.error.toUpperCase())
     } else if (fields.two_fa_code) {
-      log('info', 'Setting 2FA_NEEDED state into the current account')
+      log('info', 'Setting TWOFA_NEEDED state into the current account')
       await this.updateAccountAttributes({
-        state: '2FA_NEEDED'
+        state: 'TWOFA_NEEDED'
       })
-      const code = await waitFor2FACode.bind(this)()
+      const code = await waitForTwoFACode.bind(this)()
       log('info', `Got the ${code} code`)
       await sleep(timeout)
       return
@@ -45,25 +45,25 @@ async function start(fields) {
   }
 }
 
-async function waitFor2FACode() {
+async function waitForTwoFACode() {
   const timeout = startTime + 3 * 60 * 1000
   let account = {}
 
   // init code to null in the account
   await this.updateAccountAttributes({
-    '2fa_code': null
+    twofa_code: null
   })
 
-  while (Date.now() < timeout && account['2fa_code'] === undefined) {
+  while (Date.now() < timeout && !account.twofa_code) {
     await sleep(5000)
     account = await cozyClient.data.find('io.cozy.accounts', this.accountId)
-    log('info', `${account['2fa_code']}`)
+    log('info', `${account.twofa_code}`)
   }
 
-  if (account['2fa_code'] !== null) {
-    return account['2fa_code']
+  if (account.twofa_code) {
+    return account.twofa_code
   }
-  throw new Error('LOGIN_FAILED.2FA_EXPIRED')
+  throw new Error('LOGIN_FAILED.TWOFA_EXPIRED')
 }
 
 module.exports = new BaseKonnector(start)
