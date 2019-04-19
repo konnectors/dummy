@@ -40,28 +40,40 @@ async function start(fields) {
 }
 
 async function handle2FA(fields) {
-  log('info', 'Setting TWOFA_NEEDED state into the current account')
-  await this.updateAccountAttributes({
-    state: 'TWOFA_NEEDED'
-  })
+  if (fields.error) {
+    if (fields.error === 'LOGIN_FAILED.WRONG_TWOFA_CODE') {
+      await twoFACodeAttempts(fields, 1, 3)
+    }
 
-  // 2FA code expires here after 1s for test
-  if (!!fields.error && fields.error === 'LOGIN_FAILED.TWOFA_EXPIRED') {
-    await sleep(1000)
+    if (fields.error === 'LOGIN_FAILED.TWOFA_EXPIRED') {
+      await twoFACodeAttempts(fields, 1, 0)
+      await sleep(1000)
+    }
+
+    if (fields.error === 'LOGIN_FAILED.WRONG_TWOFA_CODE_2_ATTEMPTS') {
+      await twoFACodeAttempts(fields, 2, 3)
+    }
     throw new Error(fields.error)
   }
 
-  const code = await waitForTwoFACode.bind(this)()
-  log('info', `Got the ${code} code`)
-  await sleep(1000)
+  await twoFACodeAttempts(fields, 3, 3)
+}
 
-  if (!!fields.error && fields.error === 'LOGIN_FAILED.WRONG_TWOFA_CODE') {
-    throw new Error(fields.error)
+async function twoFACodeAttempts(fields, nbAttempts = 3, maxDurationMin = 3) {
+  const timeout = startTime + maxDurationMin * 60 * 1000
+  let state = 'TWOFA_NEEDED'
+  for (let i = 1; i <= nbAttempts; i++) {
+    if (i > 1) state = 'TWOFA_NEEDED_RETRY'
+    log('info', `Setting ${state} state into the current account`)
+    await this.updateAccountAttributes({ state })
+
+    const code = await waitForTwoFACode.bind(this)(timeout)
+    log('info', `Got the ${code} code`)
+    await sleep(1000)
   }
 }
 
-async function waitForTwoFACode() {
-  const timeout = startTime + 3 * 60 * 1000
+async function waitForTwoFACode(timeout) {
   let account = {}
 
   // init code to null in the account
