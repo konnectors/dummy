@@ -31,17 +31,32 @@ async function start(fields) {
     ) {
       throw new Error(fields.error.toUpperCase())
     } else if (fields.two_fa_code) {
-      log('info', 'Setting TWOFA_NEEDED state into the current account')
-      await this.updateAccountAttributes({
-        state: 'TWOFA_NEEDED'
-      })
-      const code = await waitForTwoFACode.bind(this)()
-      log('info', `Got the ${code} code`)
-      await sleep(timeout)
+      await handle2FA.bind(this)(fields)
       return
     } else {
       return
     }
+  }
+}
+
+async function handle2FA(fields) {
+  log('info', 'Setting TWOFA_NEEDED state into the current account')
+  await this.updateAccountAttributes({
+    state: 'TWOFA_NEEDED'
+  })
+
+  // 2FA code expires here after 1s for test
+  if (!!fields.error && fields.error === 'LOGIN_FAILED.TWOFA_EXPIRED') {
+    await sleep(1000)
+    throw new Error(fields.error)
+  }
+
+  const code = await waitForTwoFACode.bind(this)()
+  log('info', `Got the ${code} code`)
+  await sleep(1000)
+
+  if (!!fields.error && fields.error === 'LOGIN_FAILED.WRONG_TWOFA_CODE') {
+    throw new Error(fields.error)
   }
 }
 
