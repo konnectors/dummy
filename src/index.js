@@ -1,5 +1,6 @@
 const { BaseKonnector, cozyClient, log } = require('cozy-konnector-libs')
 const sleep = require('util').promisify(global.setTimeout)
+const realtime = require('cozy-realtime')
 
 const konnectorErrors = [
   'CHALLENGE_ASKED',
@@ -46,12 +47,12 @@ async function handle2FA(fields) {
   })
 
   // 2FA code expires here after 1s for test
-  if (!!fields.error && fields.error === 'LOGIN_FAILED.TWOFA_EXPIRED') {
-    await sleep(1000)
-    throw new Error(fields.error)
-  }
+  // if (!!fields.error && fields.error === 'LOGIN_FAILED.TWOFA_EXPIRED') {
+  //   await sleep(1000)
+  //   throw new Error(fields.error)
+  // }
 
-  const code = await waitForTwoFACode.bind(this)()
+  const code = await waitForTwoFACode.bind(this)(fields)
   log('info', `Got the ${code} code`)
   await sleep(1000)
 
@@ -60,7 +61,18 @@ async function handle2FA(fields) {
   }
 }
 
-async function waitForTwoFACode() {
+async function waitForTwoFACode(fields) {
+  const config = {
+    token: process.env.COZY_CREDENTIALS.trim(),
+    domain: 'cozy.works',
+    secure: true
+  }
+  const subscription = realtime.subscribe(config, 'io.cozy.accounts', {
+    docId: this.accountId
+  })
+  subscription.onUpdate(doc =>
+    log('info', `received onupdate event : ${JSON.stringify(doc)}`)
+  )
   const timeout = startTime + 3 * 60 * 1000
   let account = {}
 
@@ -71,10 +83,16 @@ async function waitForTwoFACode() {
 
   while (Date.now() < timeout && !account.twofa_code) {
     await sleep(5000)
+
+    if (!!fields.error && fields.error === 'LOGIN_FAILED.TWOFA_EXPIRED') {
+      throw new Error(fields.error)
+    }
+
     account = await cozyClient.data.find('io.cozy.accounts', this.accountId)
     log('info', `${account.twofa_code}`)
   }
 
+  subscription.unsubscribe()
   if (account.twofa_code) {
     return account.twofa_code
   }
