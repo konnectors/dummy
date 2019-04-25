@@ -42,21 +42,21 @@ async function start(fields) {
 async function handle2FA(fields) {
   if (fields.error) {
     if (fields.error === 'LOGIN_FAILED.WRONG_TWOFA_CODE') {
-      await twoFACodeAttempts(fields, 1, 3)
+      await twoFACodeAttempts.bind(this)(fields, 1, 3)
     }
 
     if (fields.error === 'LOGIN_FAILED.TWOFA_EXPIRED') {
-      await twoFACodeAttempts(fields, 1, 0)
+      await twoFACodeAttempts.bind(this)(fields, 1, 0)
       await sleep(1000)
     }
 
     if (fields.error === 'LOGIN_FAILED.WRONG_TWOFA_CODE_2_ATTEMPTS') {
-      await twoFACodeAttempts(fields, 2, 3)
+      await twoFACodeAttempts.bind(this)(fields, 2, 3)
     }
     throw new Error(fields.error)
   }
 
-  await twoFACodeAttempts(fields, 3, 3)
+  await twoFACodeAttempts.bind(this)(fields, 3, 3)
 }
 
 async function twoFACodeAttempts(fields, nbAttempts = 3, maxDurationMin = 3) {
