@@ -41,16 +41,16 @@ async function start(fields) {
 
 async function handle2FA(fields) {
   if (fields.error) {
-    if (fields.error === 'LOGIN_FAILED.WRONG_TWOFA_CODE') {
+    if (fields.error === 'USER_ACTION_NEEDED.WRONG_TWOFA_CODE') {
       await twoFACodeAttempts.bind(this)(fields, 1, 3)
     }
 
-    if (fields.error === 'LOGIN_FAILED.TWOFA_EXPIRED') {
+    if (fields.error === 'USER_ACTION_NEEDED.TWOFA_EXPIRED') {
       await twoFACodeAttempts.bind(this)(fields, 1, 0)
       await sleep(1000)
     }
 
-    if (fields.error === 'LOGIN_FAILED.WRONG_TWOFA_CODE_2_ATTEMPTS') {
+    if (fields.error === 'USER_ACTION_NEEDED.WRONG_TWOFA_CODE_2_ATTEMPTS') {
       await twoFACodeAttempts.bind(this)(fields, 2, 3)
     }
     throw new Error(fields.error)
@@ -90,7 +90,7 @@ async function waitForTwoFACode(timeout) {
   if (account.twofa_code) {
     return account.twofa_code
   }
-  throw new Error('LOGIN_FAILED.TWOFA_EXPIRED')
+  throw new Error('USER_ACTION_NEEDED.TWOFA_EXPIRED')
 }
 
 module.exports = new BaseKonnector(start)
