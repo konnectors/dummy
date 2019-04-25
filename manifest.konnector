@@ -26,19 +26,19 @@
           "value": ""
         },
         {
-          "label": "LOGIN_FAILED.WRONG_TWOFA_CODE",
-          "name": "LOGIN_FAILED.WRONG_TWOFA_CODE",
-          "value": "LOGIN_FAILED.WRONG_TWOFA_CODE"
+          "label": "USER_ACTION_NEEDED.WRONG_TWOFA_CODE",
+          "name": "USER_ACTION_NEEDED.WRONG_TWOFA_CODE",
+          "value": "USER_ACTION_NEEDED.WRONG_TWOFA_CODE"
         },
         {
-          "label": "LOGIN_FAILED.WRONG_TWOFA_CODE_2_ATTEMPTS",
-          "name": "LOGIN_FAILED.WRONG_TWOFA_CODE_2_ATTEMPTS",
-          "value": "LOGIN_FAILED.WRONG_TWOFA_CODE_2_ATTEMPTS"
+          "label": "USER_ACTION_NEEDED.WRONG_TWOFA_CODE_2_ATTEMPTS",
+          "name": "USER_ACTION_NEEDED.WRONG_TWOFA_CODE_2_ATTEMPTS",
+          "value": "USER_ACTION_NEEDED.WRONG_TWOFA_CODE_2_ATTEMPTS"
         },
         {
-          "label": "LOGIN_FAILED.TWOFA_EXPIRED",
-          "name": "LOGIN_FAILED.TWOFA_EXPIRED",
-          "value": "LOGIN_FAILED.TWOFA_EXPIRED"
+          "label": "USER_ACTION_NEEDED.TWOFA_EXPIRED",
+          "name": "USER_ACTION_NEEDED.TWOFA_EXPIRED",
+          "value": "USER_ACTION_NEEDED.TWOFA_EXPIRED"
         }
       ]
     }
