@@ -1,4 +1,4 @@
-const { BaseKonnector, cozyClient, log } = require('cozy-konnector-libs')
+const { BaseKonnector, log } = require('cozy-konnector-libs')
 const sleep = require('util').promisify(global.setTimeout)
 
 const konnectorErrors = [
@@ -67,30 +67,10 @@ async function twoFACodeAttempts(fields, nbAttempts = 3, maxDurationMin = 3) {
     log('info', `Setting ${state} state into the current account`)
     await this.updateAccountAttributes({ state })
 
-    const code = await waitForTwoFACode.bind(this)(timeout)
+    const code = await this.waitForTwoFaCode({ timeout })
     log('info', `Got the ${code} code`)
     await sleep(1000)
   }
-}
-
-async function waitForTwoFACode(timeout) {
-  let account = {}
-
-  // init code to null in the account
-  await this.updateAccountAttributes({
-    twofa_code: null
-  })
-
-  while (Date.now() < timeout && !account.twofa_code) {
-    await sleep(5000)
-    account = await cozyClient.data.find('io.cozy.accounts', this.accountId)
-    log('info', `${account.twofa_code}`)
-  }
-
-  if (account.twofa_code) {
-    return account.twofa_code
-  }
-  throw new Error('USER_ACTION_NEEDED.TWOFA_EXPIRED')
 }
 
 module.exports = new BaseKonnector(start)
