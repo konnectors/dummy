@@ -42,7 +42,8 @@ async function start(fields) {
 async function handle2FA(fields) {
   if (fields.error) {
     if (fields.error === 'USER_ACTION_NEEDED.WRONG_TWOFA_CODE') {
-      await twoFACodeAttempts.bind(this)(fields, 1, 3)
+      await twoFACodeAttempts.bind(this)(fields, 1, 0)
+      await sleep(1000)
     }
 
     if (fields.error === 'USER_ACTION_NEEDED.TWOFA_EXPIRED') {
