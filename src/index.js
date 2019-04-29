@@ -55,9 +55,9 @@ async function handle2FA(fields) {
       await twoFACodeAttempts.bind(this)(fields, 2, 3)
     }
     throw new Error(fields.error)
+  } else {
+    await twoFACodeAttempts.bind(this)(fields, 1, 3)
   }
-
-  await twoFACodeAttempts.bind(this)(fields, 1, 3)
 }
 
 async function twoFACodeAttempts(fields, nbAttempts = 3, maxDurationMin = 3) {
