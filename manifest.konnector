@@ -12,7 +12,6 @@
       "type": "password"
     },
     "two_fa_code": {
-      "type": "hidden",
       "default": "Cozy2FA"
     },
     "error": {
@@ -77,7 +76,7 @@
   "name": "Dummy 2FA",
   "category": "other",
   "type": "konnector",
-  "slug": "dummy-TwoFA",
+  "slug": "dummy-twofa",
   "description": "Konnector used for debugging purpose",
   "source": "git://github.com/konnectors/dummy.git",
   "permissions": {
