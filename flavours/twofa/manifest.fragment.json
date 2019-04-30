@@ -1,6 +1,6 @@
 {
   "name": "Dummy 2FA",
-  "slug": "dummy-TwoFA",
+  "slug": "dummy-twofa",
   "fields": {
     "login": {
       "type": "text"
@@ -9,7 +9,6 @@
       "type": "password"
     },
     "two_fa_code": {
-      "type": "hidden",
       "default": "Cozy2FA"
     },
     "error": {
