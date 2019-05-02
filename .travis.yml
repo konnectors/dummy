@@ -22,7 +22,7 @@ script:
 deploy:
 - provider: script
   skip-cleanup: true
-  script: yarn deploy && yarn cozyPublish
+  script: yarn deploy
   on:
     branch: master
 before_install:
