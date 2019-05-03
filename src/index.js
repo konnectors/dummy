@@ -61,13 +61,10 @@ async function handle2FA(fields) {
 
 async function twoFACodeAttempts(fields, nbAttempts = 3, maxDurationMin = 3) {
   const timeout = startTime + maxDurationMin * 60 * 1000
-  let state = 'TWOFA_NEEDED'
+  let retry = false
   for (let i = 1; i <= nbAttempts; i++) {
-    if (i > 1) state = 'TWOFA_NEEDED_RETRY'
-    log('info', `Setting ${state} state into the current account`)
-    await this.updateAccountAttributes({ state })
-
-    const code = await this.waitForTwoFaCode({ timeout })
+    if (i > 1) retry = true
+    const code = await this.waitForTwoFaCode({ timeout, retry })
     log('info', `Got the ${code} code`)
     await sleep(1000)
   }
