@@ -40,26 +40,30 @@ async function start(fields) {
 }
 
 async function handle2FA(fields) {
+  const setState = _setState.bind(this)
+  const twoFACodeAttempts = _twoFACodeAttempts.bind(this)
+  await setState('NO_LOGIN_DELAY')
   if (fields.error) {
     if (fields.error === 'USER_ACTION_NEEDED.WRONG_TWOFA_CODE') {
-      await twoFACodeAttempts.bind(this)(fields, 1, 5)
+      await twoFACodeAttempts(fields, 1, 5)
     }
 
     if (fields.error === 'USER_ACTION_NEEDED.TWOFA_EXPIRED') {
-      await twoFACodeAttempts.bind(this)(fields, 1, 0)
+      await twoFACodeAttempts(fields, 1, 0)
       await sleep(1000)
     }
 
     if (fields.error === 'USER_ACTION_NEEDED.WRONG_TWOFA_CODE_2_ATTEMPTS') {
-      await twoFACodeAttempts.bind(this)(fields, 2, 3)
+      await twoFACodeAttempts(fields, 2, 3)
     }
     throw new Error(fields.error)
   } else {
-    await twoFACodeAttempts.bind(this)(fields, 1, 3)
+    await twoFACodeAttempts(fields, 1, 3)
   }
+  await setState('LOGIN_SUCCESS')
 }
 
-async function twoFACodeAttempts(fields, nbAttempts = 3, maxDurationMin = 3) {
+async function _twoFACodeAttempts(fields, nbAttempts = 3, maxDurationMin = 3) {
   const timeout = startTime + maxDurationMin * 60 * 1000
   let retry = false
   for (let i = 1; i <= nbAttempts; i++) {
@@ -68,6 +72,10 @@ async function twoFACodeAttempts(fields, nbAttempts = 3, maxDurationMin = 3) {
     log('info', `Got the ${code} code`)
     await sleep(1000)
   }
+}
+
+async function _setState(state) {
+  return this.updateAccountAttributes({ state })
 }
 
 module.exports = new BaseKonnector(start)
