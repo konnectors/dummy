@@ -42,7 +42,7 @@ async function start(fields) {
 async function handle2FA(fields) {
   const setState = _setState.bind(this)
   const twoFACodeAttempts = _twoFACodeAttempts.bind(this)
-  await setState('NO_LOGIN_DELAY')
+  await setState('HANDLE_LOGIN_SUCCESS')
   if (fields.error) {
     if (fields.error === 'USER_ACTION_NEEDED.WRONG_TWOFA_CODE') {
       await twoFACodeAttempts(fields, 1, 5)
