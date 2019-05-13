@@ -40,9 +40,14 @@ async function start(fields) {
 }
 
 async function handle2FA(fields) {
+  log('info', `handle2FA account state : ${this.getAccountData().state}`)
   const setState = _setState.bind(this)
   const twoFACodeAttempts = _twoFACodeAttempts.bind(this)
   await setState('HANDLE_LOGIN_SUCCESS')
+  log(
+    'info',
+    `handle2FA before attempts account state : ${this.getAccountData().state}`
+  )
   if (fields.error) {
     if (fields.error === 'USER_ACTION_NEEDED.WRONG_TWOFA_CODE') {
       await twoFACodeAttempts(fields, 1, 5)
@@ -60,7 +65,17 @@ async function handle2FA(fields) {
   } else {
     await twoFACodeAttempts(fields, 1, 3)
   }
+  log(
+    'info',
+    `handle2FA after attempts account state : ${this.getAccountData().state}`
+  )
   await setState('LOGIN_SUCCESS')
+  log(
+    'info',
+    `handle2FA after LOGIN_SUCCESS account state : ${
+      this.getAccountData().state
+    }`
+  )
 }
 
 async function _twoFACodeAttempts(fields, nbAttempts = 3, maxDurationMin = 3) {
