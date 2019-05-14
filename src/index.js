@@ -41,6 +41,7 @@ async function start(fields) {
 
 async function handle2FA(fields) {
   log('info', `handle2FA account state : ${this.getAccountData().state}`)
+  log('info', `handle2FA account revision : ${this._account._rev}`)
   const setState = _setState.bind(this)
   const twoFACodeAttempts = _twoFACodeAttempts.bind(this)
   await setState('HANDLE_LOGIN_SUCCESS')
