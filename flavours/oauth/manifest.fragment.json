@@ -1,5 +1,5 @@
 {
-  "name": "Dummy OAuth",
+  "name": "OAuth (Dummy)",
   "slug": "dummy-oauth",
   "fields": null,
   "oauth": {
