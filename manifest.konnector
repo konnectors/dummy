@@ -36,7 +36,7 @@
   },
   "manifest_version": "2",
   "version": "1.0.0",
-  "name": "Dummy OAuth",
+  "name": "OAuth (Dummy)",
   "category": "other",
   "type": "konnector",
   "slug": "dummy-oauth",
