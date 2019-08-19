@@ -76,7 +76,7 @@
   "name": "Dummy 2FA",
   "category": "other",
   "type": "konnector",
-  "slug": "dummy-twofa",
+  "slug": "dummy",
   "description": "Konnector used for debugging purpose",
   "source": "git://github.com/konnectors/dummy.git",
   "permissions": {
