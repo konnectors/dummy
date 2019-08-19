@@ -35,7 +35,7 @@
     "postbuild": "scripts/postbuild.sh",
     "lint": "eslint --fix .",
     "deploy": "scripts/deploy.sh",
-    "cozyPublish": "scripts/publish.sh $REGISTRY_TOKEN",
+    "cozyPublish": "cd build-twofa && cozy-app-publish --token $REGISTRY_TOKEN --build-commit $(git rev-parse ${DEPLOY_BRANCH:-build_twofa})",
     "travisDeployKey": "./bin/generate_travis_deploy_key"
   },
   "dependencies": {
