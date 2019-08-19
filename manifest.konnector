@@ -1,0 +1,93 @@
+{
+  "categories": [
+    "other"
+  ],
+  "data_types": [],
+  "editor": "Cozy",
+  "fields": {
+    "login": {
+      "type": "text"
+    },
+    "password": {
+      "type": "password"
+    },
+    "two_fa_code": {
+      "default": "Cozy2FA"
+    },
+    "error": {
+      "type": "dropdown",
+      "isRequired": false,
+      "required": false,
+      "options": [
+        {
+          "label": "-",
+          "name": "-",
+          "value": ""
+        },
+        {
+          "label": "USER_ACTION_NEEDED.WRONG_TWOFA_CODE",
+          "name": "USER_ACTION_NEEDED.WRONG_TWOFA_CODE",
+          "value": "USER_ACTION_NEEDED.WRONG_TWOFA_CODE"
+        },
+        {
+          "label": "USER_ACTION_NEEDED.WRONG_TWOFA_CODE_2_ATTEMPTS",
+          "name": "USER_ACTION_NEEDED.WRONG_TWOFA_CODE_2_ATTEMPTS",
+          "value": "USER_ACTION_NEEDED.WRONG_TWOFA_CODE_2_ATTEMPTS"
+        },
+        {
+          "label": "USER_ACTION_NEEDED.TWOFA_EXPIRED",
+          "name": "USER_ACTION_NEEDED.TWOFA_EXPIRED",
+          "value": "USER_ACTION_NEEDED.TWOFA_EXPIRED"
+        }
+      ]
+    }
+  },
+  "icon": "dummy.svg",
+  "langs": [
+    "en",
+    "fr"
+  ],
+  "locales": {
+    "en": {
+      "description": "Konnector used for debug purpose",
+      "fields": {
+        "date": {
+          "label": "Date"
+        },
+        "error": {
+          "label": "Intended error"
+        }
+      }
+    },
+    "fr": {
+      "description": "Konnecteur de débogage",
+      "fields": {
+        "date": {
+          "label": "Date"
+        },
+        "error": {
+          "label": "Erreur souhaitée"
+        }
+      }
+    }
+  },
+  "manifest_version": "2",
+  "version": "1.0.0",
+  "name": "Dummy 2FA",
+  "category": "other",
+  "type": "konnector",
+  "slug": "dummy-twofa",
+  "description": "Konnector used for debugging purpose",
+  "source": "git://github.com/konnectors/dummy.git",
+  "permissions": {
+    "accounts": {
+      "description": "Required to get the account's data",
+      "type": "io.cozy.accounts"
+    }
+  },
+  "developer": {
+    "name": "cozy",
+    "url": "cozy.io"
+  },
+  "vendor_link": "http://cozy.io"
+}
