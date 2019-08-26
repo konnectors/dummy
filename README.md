@@ -13,6 +13,15 @@ What's Dummy?
 
 Dummy is a konnector used for development, debugging and test purpose. It is used to test error from the connector to the [Home][].
 
+Install
+-------
+
+Since `dummy` is only for development purpose, it must not be available in the Cozy store and as such is only published
+on the `dev` channel.
+
+```bash
+cozy-stack konnectors install dummy registry://dummy/dev
+```
 
 [cozy]: https://cozy.io "Cozy Cloud"
 [Home]: https://github.com/cozy/cozy-home
