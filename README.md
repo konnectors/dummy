@@ -24,13 +24,14 @@ change lands on master.
 
 - `build`: Dummy connector
 - `build_aggregator`: Used to test the aggregator account feature used in Banking konnectors
-- `build_form`
+- `build_form`: Used to test various form elements used in the authentication form
 - `build_oauth`
 - `build_twofa`: Used to test 2FA flow for example for the [Amazon](https://github.com/konnectors/amazon) connector
 
-Each of this flavor is published on a build branch, for example [here](https://github.com/konnectors/dummy/tree/build_twofa)
+Each of this flavor is published on a build branch, for example [here](https://github.com/konnectors/dummy/tree/build_twofa).
 
-Additionally, the 2FA flavor is published in the registry at `registry://dummy/dev`.
+Additionally, the 2FA flavor is published in the registry at `registry://dummy/dev`. It can be useful for flows
+where it is not suitable to install the connector via the CLI.
 
 ```bash
 cozy-stack konnectors install dummy registry://dummy/dev
