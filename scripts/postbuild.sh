@@ -11,4 +11,9 @@ find flavours/* -prune -type d -exec basename {} \; | while IFS= read -r d; do
     jq -s '.[0] + .[1]' "build-$d/manifest.konnector" "flavours/$d/manifest.fragment.json" > "build-$d/manifest.temp"
     rm "build-$d/manifest.konnector"
     mv "build-$d/manifest.temp" "build-$d/manifest.konnector"
+    # index.js
+    if [[ -e "flavours/$d/index.js" ]]
+    then
+      yarn webpack "flavours/$d/index.js" -o "build-$d/index.js" --config webpack.flavour.config.js
+    fi
 done
