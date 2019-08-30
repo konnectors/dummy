@@ -11,33 +11,23 @@
     "password": {
       "type": "password"
     },
-    "two_fa_code": {
+    "twoFACode": {
       "default": "Cozy2FA"
     },
-    "error": {
+    "twoFATimeout": {
+      "default": "30000"
+    },
+    "tries": {
       "type": "dropdown",
-      "isRequired": false,
-      "required": false,
+      "default": "1",
       "options": [
         {
-          "label": "-",
-          "name": "-",
-          "value": ""
+          "label": "1",
+          "value": "1"
         },
         {
-          "label": "USER_ACTION_NEEDED.WRONG_TWOFA_CODE",
-          "name": "USER_ACTION_NEEDED.WRONG_TWOFA_CODE",
-          "value": "USER_ACTION_NEEDED.WRONG_TWOFA_CODE"
-        },
-        {
-          "label": "USER_ACTION_NEEDED.WRONG_TWOFA_CODE_2_ATTEMPTS",
-          "name": "USER_ACTION_NEEDED.WRONG_TWOFA_CODE_2_ATTEMPTS",
-          "value": "USER_ACTION_NEEDED.WRONG_TWOFA_CODE_2_ATTEMPTS"
-        },
-        {
-          "label": "USER_ACTION_NEEDED.TWOFA_EXPIRED",
-          "name": "USER_ACTION_NEEDED.TWOFA_EXPIRED",
-          "value": "USER_ACTION_NEEDED.TWOFA_EXPIRED"
+          "label": "2",
+          "value": "2"
         }
       ]
     }
@@ -51,22 +41,28 @@
     "en": {
       "description": "Konnector used for debug purpose",
       "fields": {
-        "date": {
-          "label": "Date"
+        "twoFACode": {
+          "label": "Expected 2FA code"
         },
-        "error": {
-          "label": "Intended error"
+        "twoFATimeout": {
+          "label": "2FA Code expiration delay"
+        },
+        "tries": {
+          "label": "Allowed tries"
         }
       }
     },
     "fr": {
       "description": "Konnecteur de débogage",
       "fields": {
-        "date": {
-          "label": "Date"
+        "twoFACode": {
+          "label": "Code 2FA attendu"
         },
-        "error": {
-          "label": "Erreur souhaitée"
+        "twoFATimeout": {
+          "label": "Délai d'expiration du code 2FA"
+        },
+        "tries": {
+          "label": "Nombre d'essais"
         }
       }
     }
@@ -76,7 +72,7 @@
   "name": "Dummy 2FA",
   "category": "other",
   "type": "konnector",
-  "slug": "dummy",
+  "slug": "dummy-twofa",
   "description": "Konnector used for debugging purpose",
   "source": "git://github.com/konnectors/dummy.git",
   "permissions": {
