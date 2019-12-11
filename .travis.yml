@@ -16,6 +16,7 @@ branches:
   - build_form
   - build_oauth
   - build_twofa
+  - build_bank
 script:
 - yarn lint
 - yarn build
