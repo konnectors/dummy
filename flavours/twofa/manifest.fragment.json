@@ -1,6 +1,6 @@
 {
   "name": "Dummy 2FA",
-  "slug": "dummy-twofa",
+  "slug": "dummy",
   "fields": {
     "login": {
       "type": "text"
