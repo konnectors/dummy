@@ -25,7 +25,7 @@ change lands on master.
 - `build`: Dummy connector
 - `build_aggregator`: Used to test the aggregator account feature used in Banking konnectors
 - `build_form`: Used to test various form elements used in the authentication form
-- `build_oauth`: Used to test oauth flow. Real example : [Facebook](https://github.com/konnectors/cozy-konnector-facebook/)
+- `build_oauth`: Used to test oauth flow. Real example : [Facebook](https://github.com/konnectors/cozy-konnector-facebook/). See specific [README](./flavours/oauth/README.md) for more information.
 - `build_twofa`: Used to test 2FA flow for example for the [Amazon](https://github.com/konnectors/amazon) connector
 
 Each of this flavor is published on a build branch, for example [here](https://github.com/konnectors/dummy/tree/build_twofa).
