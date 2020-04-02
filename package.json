@@ -29,7 +29,7 @@
     "standalone": "cozy-konnector-standalone",
     "pretest": "npm run clean",
     "check": "konitor check .",
-    "clean": "rm -rf ./data",
+    "clean": "rm -rf ./data build* ",
     "build": "webpack",
     "postbuild": "scripts/postbuild.sh",
     "lint": "eslint --fix .",
