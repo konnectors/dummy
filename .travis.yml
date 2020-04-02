@@ -3,7 +3,7 @@ node_js:
 - '12'
 env:
   global:
-  - DEPLOY_REPOSITORY="git@github.com:konnectors/dummy.git"
+  # REGISTRY_TOKEN(editor=cozy, app=dummy)
   - secure: kZaw3XwSbkeHnUlpbnxwWkK+9fchnBdeGYkfiNAFRUFBeBbA7xHxi+lJ4TokH5dlb9yYzSLqaq9PD8iJTR2nVW3rhkxT50DYkKuW51Q2HxLRabMVIRttXFsKDmThhR+gcBqfa71tqvXalYujaZGateSmP4Ah1MFCOhVJg2HhFAxfRO/cNyH0+9mWDc5/2lY/Xsr4QNI2aTVCanJZ0kkoXKOv1gWOQHzAhjF68er14V8iusquYFLVDqmmhRMycFwxwjB/YAhMYFPVXnGebhbpXC7R/v7FjmXT0j0z3OoO+h6yDDd+9w7YXhj8AWTvTccV1YzXqQknZxHieE68co5W1QIQBWFVn4vGuZfjYC/wivY05e0f+N6xJ4Jv7PWvjUW8OWDdVKbK3BGYdkY3E1pd7XEGK6l8c1RhHnr+1mf0AeAPIIHFiLcAQe0eZDSpdM16z5Z9430BjbPky9/qpJs4iuY6SaveiqFKRllu04Q6r8EwgLcjzu8LV9BQPjcMBP+cGqFx7LyVoWdO7NHMRxYdwLLzAUwzEo2whed81ABo+ziLM6xJeVkJ5ajyOj39x83PX/TYs+hxo0D+w8DOB7K6DZXcZsENOIuHOSLl/I4lXkRw5THLo2OXKIgUfXrTlzkRqRUXKRDv8HP4h0QGPqTT0kr/ZBfjxMkZgipv+1IbuhI=
 cache:
   yarn: true
