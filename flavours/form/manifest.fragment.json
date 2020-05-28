@@ -4,9 +4,10 @@
   "fields": {
     "username": {
       "type": "text",
-      "label": "login"
+      "label": "login",
+      "identifier": true
     },
-    "passphrase": {
+    "password": {
       "type": "password"
     },
     "date": {
