@@ -2,11 +2,10 @@
   "name": "Form (Dummy)",
   "slug": "dummy-form",
   "fields": {
-    "username": {
-      "type": "text",
-      "label": "login"
+    "login": {
+      "type": "text"
     },
-    "passphrase": {
+    "password": {
       "type": "password"
     },
     "date": {
