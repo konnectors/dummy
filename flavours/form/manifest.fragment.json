@@ -2,10 +2,8 @@
   "name": "Form (Dummy)",
   "slug": "dummy-form",
   "fields": {
-    "username": {
-      "type": "text",
-      "label": "login",
-      "identifier": true
+    "login": {
+      "type": "text"
     },
     "password": {
       "type": "password"
