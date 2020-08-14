@@ -1,7 +1,7 @@
 {
   "name": "Bank (Dummy)",
   "slug": "dummy-bank",
-  "category": "banking",
+  "categories": ["banking"],
   "data_types": ["bankAccounts"],
   "fields": {
     "login": {
