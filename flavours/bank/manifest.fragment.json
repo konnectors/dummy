@@ -80,6 +80,11 @@
           "value": "USER_ACTION_NEEDED.OAUTH_OUTDATED"
         },
         {
+          "label": "USER_ACTION_NEEDED.SCA_REQUIRED",
+          "name": "USER_ACTION_NEEDED.SCA_REQUIRED",
+          "value": "USER_ACTION_NEEDED.SCA_REQUIRED"
+        },
+        {
           "label": "USER_ACTION_NEEDED.PERMISSIONS_CHANGED",
           "name": "USER_ACTION_NEEDED.PERMISSIONS_CHANGED",
           "value": "USER_ACTION_NEEDED.PERMISSIONS_CHANGED"
