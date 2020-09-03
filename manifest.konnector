@@ -88,6 +88,11 @@
           "value": "USER_ACTION_NEEDED.SCA_REQUIRED"
         },
         {
+          "label": "USER_ACTION_NEEDED.WEBAUTH_REQUIRED",
+          "name": "USER_ACTION_NEEDED.WEBAUTH_REQUIRED",
+          "value": "USER_ACTION_NEEDED.WEBAUTH_REQUIRED"
+        },
+        {
           "label": "USER_ACTION_NEEDED.PERMISSIONS_CHANGED",
           "name": "USER_ACTION_NEEDED.PERMISSIONS_CHANGED",
           "value": "USER_ACTION_NEEDED.PERMISSIONS_CHANGED"
