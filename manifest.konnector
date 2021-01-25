@@ -1,5 +1,5 @@
 {
-  "categories": ["other"],
+  "categories": ["others"],
   "data_types": [],
   "editor": "Cozy",
   "fields": {
@@ -136,7 +136,6 @@
   "manifest_version": "2",
   "version": "1.1.0",
   "name": "Dummy",
-  "category": "other",
   "type": "konnector",
   "slug": "dummy",
   "description": "Konnector used for debugging purpose",
