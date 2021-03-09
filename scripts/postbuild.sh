@@ -3,6 +3,7 @@ set -e
 
 # Generate all flavours of Dummy
 find flavours/* -prune -type d -exec basename {} \; | while IFS= read -r d; do
+    echo "Building $d"
     rm -Rf "build-$d"
     cp -R build "build-$d"
     # icon
@@ -13,6 +14,6 @@ find flavours/* -prune -type d -exec basename {} \; | while IFS= read -r d; do
     mv "build-$d/manifest.temp" "build-$d/manifest.konnector"
 
     if test -f "flavours/$d/index.js"; then
-      yarn webpack "flavours/$d/index.js" -o "build-$d/index.js" --config webpack.flavour.config.js
+      yarn webpack "./flavours/$d/index.js" -o "build-$d/" --config webpack.flavour.config.js
     fi
 done
