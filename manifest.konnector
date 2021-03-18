@@ -44,6 +44,11 @@
           "value": "LOGIN_FAILED.TOO_MANY_ATTEMPTS"
         },
         {
+          "label": "LOGIN_FAILED.WRONG_TWOFA_CODE",
+          "name": "LOGIN_FAILED.WRONG_TWOFA_CODE",
+          "value": "LOGIN_FAILED.WRONG_TWOFA_CODE"
+        },
+        {
           "label": "MAINTENANCE",
           "name": "MAINTENANCE",
           "value": "MAINTENANCE"
