@@ -8,18 +8,20 @@ async function start(fields) {
   const {
     twoFACode,
     twoFATimeout = TWOFA_EXPIRATION_TIMEOUT,
-    tries = '1'
+    tries = '1',
+    type = 'bank'
   } = fields
 
   const endTime = startTime + twoFATimeout
 
   let code = await this.waitForTwoFaCode({
     timeout: endTime,
-    retry: false
+    retry: false,
+    type: type
   })
 
   if (code !== twoFACode && tries === '2') {
-    await this.waitForTwoFaCode({ timeout: endTime, retry: true })
+    await this.waitForTwoFaCode({ timeout: endTime, retry: true, type: type })
   }
 
   if (code === twoFACode) {

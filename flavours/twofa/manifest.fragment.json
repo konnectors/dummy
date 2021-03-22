@@ -14,6 +14,16 @@
     "twoFATimeout": {
       "default": "30000"
     },
+    "type": {
+      "type": "dropdown",
+      "default": "bank",
+      "options": [
+        { "label": "bank", "value": "bank" },
+        { "label": "app_code", "value": "app_code" },
+        { "label": "app", "value": "app" },
+        { "label": "sms", "value": "sms" }
+      ]
+    },
     "tries": {
       "type": "dropdown",
       "default": "1",
