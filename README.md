@@ -13,6 +13,21 @@ What's Dummy?
 
 Dummy is a konnector used for development, debugging and test purpose. It is used to test error from the connector to the [Home][].
 
+
+Build
+-------
+
+Build locally all flavours
+```bash
+yarn build
+```
+
+Deploy flavours on their respective branch
+```bash
+yarn deploy
+```
+
+
 Install
 -------
 
@@ -44,6 +59,9 @@ cozy-stack konnectors install dummy git://github.com/konnectors/dummy.git#build
 # Install the build_aggregator flavour
 cozy-stack konnectors install dummy git://github.com/konnectors/dummy.git#build_aggregator
 
+# Install the build_bank flavour
+cozy-stack konnectors install dummy git://github.com/konnectors/dummy.git#build_bank
+
 # Install the build_form flavour
 cozy-stack konnectors install dummy git://github.com/konnectors/dummy.git#build_form
 
@@ -55,7 +73,7 @@ cozy-stack konnectors install dummy git://github.com/konnectors/dummy.git#build_
 ```
 
 Additionally, the 2FA flavor is published in the registry at `registry://dummy/dev`. It can be useful for flows
-where it is not suitable to install the connector via the CLI.
+where it is not suitable to install the connector via the CLI. (This need double check)
 
 ```bash
 cozy-stack konnectors install dummy registry://dummy/dev
