@@ -3,6 +3,7 @@ const { BaseKonnector } = require('cozy-konnector-libs')
 const TWOFA_EXPIRATION_TIMEOUT = 30000
 
 async function start(fields) {
+  await this.deactivateAutoSuccessfulLogin()
   const startTime = Date.now()
 
   const {
