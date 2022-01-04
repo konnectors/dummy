@@ -24,6 +24,11 @@
           "value": ""
         },
         {
+          "label": "UNKNOWN_ERROR",
+          "name": "UNKNOWN_ERROR",
+          "value": "UNKNOWN_ERROR"
+        },
+        {
           "label": "CHALLENGE_ASKED",
           "name": "CHALLENGE_ASKED",
           "value": "CHALLENGE_ASKED"

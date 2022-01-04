@@ -2,6 +2,7 @@ const { BaseKonnector } = require('cozy-konnector-libs')
 const sleep = require('util').promisify(global.setTimeout)
 
 const konnectorErrors = [
+  'UNKNOWN_ERROR',
   'CHALLENGE_ASKED',
   'LOGIN_FAILED',
   'LOGIN_FAILED.NEEDS_SECRET',
