@@ -16,13 +16,13 @@ For more detail about OAuth workflow in Cozy, see https://docs.cozy.io/en/cozy-s
 Then we must register our konnector on `cozy.localhost:8080`.
 
 ```
-curl -i -H "Accept: application/json" -H "Content-Type: application/json" -X POST -d '{"client_name":"Dummy OAuth","software_id":"cozy-konnector-dummy-oauth","redirect _uris":["http://oauthcallback.x.cozy.localhost:8080/accounts/dummy-oauth/redirect"]}' http://cozy.localhost:8080/auth/register
+curl -i -H "Accept: application/json" -H "Content-Type: application/json" -X POST -d '{"client_name":"Dummy OAuth","software_id":"cozy-konnector-dummy-oauth","redirect_uris":["http://oauthcallback.x.cozy.localhost:8080/accounts/dummy-oauth/redirect"]}' http://cozy.localhost:8080/auth/register
 ```
 
 We then use the values in the responses to configure our account type in CouchDB. Let's keep `client_id`, `client_secret`
 
-Then let's create a document for the account type `dummy-oauth`. With fauxton :
-
+Then, in Fauxton, we create a document called `dummy-oauth` into `secrets/io-cozy-account_types`
+database :
 
 ```
 {
