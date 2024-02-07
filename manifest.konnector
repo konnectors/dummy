@@ -29,6 +29,11 @@
           "value": "UNKNOWN_ERROR"
         },
         {
+          "label": "UNKNOWN_ERROR.PARTIAL_SYNC",
+          "name": "UNKNOWN_ERROR.PARTIAL_SYNC",
+          "value": "UNKNOWN_ERROR.PARTIAL_SYNC"
+        },
+        {
           "label": "CHALLENGE_ASKED",
           "name": "CHALLENGE_ASKED",
           "value": "CHALLENGE_ASKED"

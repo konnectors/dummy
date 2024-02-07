@@ -3,6 +3,7 @@ const sleep = require('util').promisify(global.setTimeout)
 
 const konnectorErrors = [
   'UNKNOWN_ERROR',
+  'UNKNOWN_ERROR.PARTIAL_SYNC',
   'CHALLENGE_ASKED',
   'LOGIN_FAILED',
   'LOGIN_FAILED.NEEDS_SECRET',
