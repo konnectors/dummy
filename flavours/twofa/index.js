@@ -16,13 +16,13 @@ async function start(fields) {
   const endTime = startTime + twoFATimeout
 
   let code = await this.waitForTwoFaCode({
-    timeout: endTime,
+    endTime,
     retry: false,
     type: type
   })
 
   if (code !== twoFACode && tries === '2') {
-    await this.waitForTwoFaCode({ timeout: endTime, retry: true, type: type })
+    await this.waitForTwoFaCode({ endTime, retry: true, type: type })
   }
 
   if (code === twoFACode) {
